@@ -130,13 +130,208 @@
             <a
               role="button"
               class="btn btn-block nav-link btn-warning"
-              data-toggle="tooltip"
-              data-html="true"
-              title="Or Call us at  <br><strong>+852 12345678</strong>"
-              data-placement="bottom"
-              href="#reserveform"
-              >Reserve Table</a
+              data-toggle="modal"
+              data-target="#reserveModal"
+              onclick="setActiveNoSmokingArea()"
             >
+              Reserve Table</a
+            >
+          </div>
+          <div id="reserveModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+              <div class="modal-content text-dark">
+                <div class="modal-header">
+                  <h4 class="modal-title">Reserve a Table</h4>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                  >
+                    &times;
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group row">
+                      <label
+                        for="numberofGuests"
+                        class="col-12 col-sm-4 col-md-3 col-lg-2 col-form-label"
+                        >Number of Guests</label
+                      >
+                      <div class="col-12 col-sm-8 col-md-9 col-lg-10">
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customGuestRadio1"
+                            name="numberofGuestsLine"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customGuestRadio1"
+                            >1</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customGuestRadio2"
+                            name="numberofGuestsLine"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customGuestRadio2"
+                            >2</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customGuestRadio3"
+                            name="numberofGuestsLine"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customGuestRadio3"
+                            >3</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customGuestRadio4"
+                            name="numberofGuestsLine"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customGuestRadio4"
+                            >4</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customGuestRadio5"
+                            name="numberofGuestsLine"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customGuestRadio5"
+                            >5</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customGuestRadio6"
+                            name="numberofGuestsLine"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customGuestRadio6"
+                            >6</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="section"
+                        class="col-12 col-sm-12 col-md-3 col-lg-2 col-form-label"
+                        >Section</label
+                      >
+                      <div
+                        class="btn-group btn-group-toggle col-12 col-sm-12 col-md-9 col-lg-8"
+                        data-toggle="buttons"
+                      >
+                        <label
+                          id="smokingLabel"
+                          class="btn btn-success active focus"
+                          
+                        >
+                          <input
+                            type="radio"
+                            name="options"
+                            id="option1"
+                            autocomplete="off"
+                            data-toggle="button"
+                          />
+                          Non Smoking
+                        </label>
+                        <label
+                          class="btn btn-danger"
+                          onclick="setInactiveNoSmokingArea()"
+                        >
+                          <input
+                            type="radio"
+                            name="options"
+                            data-toggle="button"
+                            id="option2"
+                            autocomplete="off"
+                          />
+                          Smoking
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label
+                        for="numberofGuests"
+                        class="col-12 col-sm-12 col-md-3 col-lg-2 col-form-label"
+                        >Date and Time</label
+                      >
+                      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="date"
+                          name="date"
+                          placeholder="Date"
+                        />
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="time"
+                          name="time"
+                          placeholder="Time"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="offset-1 offset-md-3 offset-lg-2">
+                        <button type="submit" class="btn btn-secondary"  data-dismiss="modal">
+                          Cancel
+                        </button>
+                      </div>
+                      <div class="col-5 col-md-4">
+                        <button type="submit" class="btn btn-primary" >
+                          Reserve
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -285,162 +480,23 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content d-flex justify-content-center">
-            <div class="col-12 col-sm-8">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white">Reserve a table</h3>
-                    <div class="card-body bg-white">
-                        <form id="reserveform">
-                            <div class="form-group row">
-                                <label for="numberofGuests" class="col-12 col-sm-4 col-md-3 col-lg-2 col-form-label">Number of Guests</label
-                  >
-                  <div class="col-12 col-sm-8 col-md-9 col-lg-10">
-                    <div
-                      class="custom-control custom-radio custom-control-inline"
-                    >
-                      <input
-                        type="radio"
-                        id="customGuestRadio1"
-                        name="numberofGuestsLine"
-                        class="custom-control-input"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="customGuestRadio1"
-                        >1</label
-                      >
-                    </div>
-                    <div
-                      class="custom-control custom-radio custom-control-inline"
-                    >
-                      <input
-                        type="radio"
-                        id="customGuestRadio2"
-                        name="numberofGuestsLine"
-                        class="custom-control-input"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="customGuestRadio2"
-                        >2</label
-                      >
-                    </div>
-                    <div
-                      class="custom-control custom-radio custom-control-inline"
-                    >
-                      <input
-                        type="radio"
-                        id="customGuestRadio3"
-                        name="numberofGuestsLine"
-                        class="custom-control-input"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="customGuestRadio3"
-                        >3</label
-                      >
-                    </div>
-                    <div
-                      class="custom-control custom-radio custom-control-inline"
-                    >
-                      <input
-                        type="radio"
-                        id="customGuestRadio4"
-                        name="numberofGuestsLine"
-                        class="custom-control-input"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="customGuestRadio4"
-                        >4</label
-                      >
-                    </div>
-                    <div
-                      class="custom-control custom-radio custom-control-inline"
-                    >
-                      <input
-                        type="radio"
-                        id="customGuestRadio5"
-                        name="numberofGuestsLine"
-                        class="custom-control-input"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="customGuestRadio5"
-                        >5</label
-                      >
-                    </div>
-                    <div
-                      class="custom-control custom-radio custom-control-inline"
-                    >
-                      <input
-                        type="radio"
-                        id="customGuestRadio6"
-                        name="numberofGuestsLine"
-                        class="custom-control-input"
-                      />
-                      <label
-                        class="custom-control-label"
-                        for="customGuestRadio6"
-                        >6</label
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label
-                    for="numberofGuests"
-                    class="col-12 col-sm-12 col-md-3 col-lg-2 col-form-label"
-                    >Date and Time</label
-                  >
-                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="date"
-                      name="date"
-                      placeholder="Date"
-                    />
-                  </div>
-                  <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="time"
-                      name="time"
-                      placeholder="Time"
-                    />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="offset-md-3 offset-lg-2 col-md-10">
-                    <button type="submit" class="btn btn-primary">
-                      Reserve
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 offset-1 col-sm-2">
-            <h5>Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="./aboutus.html">About</a></li>
-              <li><a href="#">Menu</a></li>
-              <li><a href="./contactus.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-7 col-sm-5">
-            <h5>Our Address</h5>
-            <address>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 offset-1 col-sm-2">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="./aboutus.html">About</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="./contactus.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-7 col-sm-5">
+                        <h5>Our Address</h5>
+                        <address>
               121, Clear Water Bay Road<br />
               Clear Water Bay, Kowloon<br />
               HONG KONG<br />
@@ -449,57 +505,50 @@
               <i class="fa fa-envelope fa-lg"></i>Email:
               <a href="mailto:confusion@food.net">confusion@food.net</a>
             </address>
-          </div>
-          <div class="col-12 col-sm-4 align-self-center">
-            <div class="text-center">
-              <a
-                class="btn btn-social-icon btn-google"
-                href="http://google.com/+"
-                ><i class="fa fa-google-plus"></i
+                    </div>
+                    <div class="col-12 col-sm-4 align-self-center">
+                        <div class="text-center">
+                            <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i
               ></a>
-              <a
-                class="btn btn-social-icon btn-facebook"
-                href="http://www.facebook.com/profile.php?id="
-                ><i class="fa fa-facebook"></i
+                            <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i
               ></a>
-              <a
-                class="btn btn-social-icon btn-linkedin"
-                href="http://www.linkedin.com/in/"
-                ><i class="fa fa-linkedin"></i
+                            <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i
               ></a>
-              <a
-                class="btn btn-social-icon btn-twitter"
-                href="http://twitter.com/"
-                ><i class="fa fa-twitter"></i
+                            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i
               ></a>
-              <a
-                class="btn btn-social-icon btn-google"
-                href="http://youtube.com/"
-                ><i class="fa fa-youtube"></i
+                            <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i
               ></a>
-              <a class="btn btn-social-icon" href="mailto:"
-                ><i class="fa fa-envelope-o"></i
+                            <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i
               ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="d-flex justify-content-center">
+                            © Copyright 2018 Ristorante Con Fusion
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-auto">
-            <p>© Copyright 2018 Ristorante Con Fusion</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+        </footer>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
 
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    </script>
-  </body>
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+            function setInactiveNoSmokingArea() {
+                var name = document.getElementById("smokingLabel");
+                name.className = "btn btn-success";
+            }
+
+            function setActiveNoSmokingArea() {
+                var name = document.getElementById("smokingLabel");
+                name.className = "btn btn-success active focus";
+            }
+        </script>
+</body>
+
 </html>
